@@ -35,8 +35,8 @@ def autotuneURL(filename, URL, replaceOriginal = True, video = True, executableN
 			loud_run(["ffmpeg", "-hide_banner", "-loglevel", loglevel, "-i", filename, "-ac", "1", wavName])
 		else:
 			rename(filename, wavName)
-		autotuneName = f'{directory}/autotune_{randDigits()}.wav'
-		autotune(wavName, downloadName, autotuneName, executableName = executableName)
+		autotuneName = f'{directory}/vocode_{randDigits()}.wav'
+		vocode(wavName, downloadName, autotuneName, executableName = executableName)
 		remove(downloadName)
 		remove(wavName)
 		exportName = f"{directory}/{randDigits()}{path.splitext(filename)[1]}"
